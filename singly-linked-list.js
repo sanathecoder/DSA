@@ -29,10 +29,11 @@ class SinglyLinkedList {
     printLL() {
         let t1 = this.head;
 
-        while (t1 !== null) {
+        while (t1.next !== null) {
             console.log(t1.data);
             t1 = t1.next;
         }
+        console.log(t1.data)
     }
 }
 
