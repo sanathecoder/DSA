@@ -26,6 +26,12 @@ class SinglyLinkedList {
         }
     }
 
+    insertAtBeg(value){
+        let temp = new Node(value)
+        temp.next = this.head
+        this.head = temp
+    }
+
     printLL() {
         let t1 = this.head;
 
@@ -43,5 +49,6 @@ let list = new SinglyLinkedList();
 list.insertAtEnd(10);
 list.insertAtEnd(20);
 list.insertAtEnd(30);
+list.insertAtBeg(5)
 
 list.printLL();
