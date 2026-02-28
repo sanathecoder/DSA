@@ -32,6 +32,40 @@ class SinglyLinkedList {
         this.head = temp
     }
 
+    insertAtMid(value, x ){
+        let temp = new Node(value)
+        let t1 = this.head
+        while(t1.next !== null){
+            if(t1.data == x){
+                temp.next = t1.next
+                t1.next = temp
+                break
+
+            }
+            t1 = t1.next
+        }
+    }
+
+    deleteLL(value){
+        let t1 = this.head
+        let prev = t1
+        if(t1.data == value){
+            this.head = t1.next
+        }
+        while(t1.next !== null){
+            if(t1.data == value){
+                prev.next = t1.next
+                return
+            }else{
+                prev = t1
+                t1 = t1.next
+            }
+        }
+        if(t1.data == value){
+            prev.next = null
+        }
+    }
+
     printLL() {
         let t1 = this.head;
 
@@ -46,9 +80,12 @@ class SinglyLinkedList {
 // Create object
 let list = new SinglyLinkedList();
 
-list.insertAtEnd(10);
 list.insertAtEnd(20);
 list.insertAtEnd(30);
-list.insertAtBeg(5)
+list.insertAtEnd(50);
+list.insertAtEnd(60);
+list.insertAtBeg(10)
+list.insertAtMid(40,30)
+list.deleteLL(50)
 
 list.printLL();
