@@ -40,6 +40,23 @@ class DoublyLL{
         this.head = temp
     }
 
+    InsertAtMid(value,x){
+        let t = this.head
+        while(t.next !== null){
+            if(t.data == x){
+                break
+            }else{
+                t = t.next
+            }
+        }
+        let temp = new Node(value)
+        temp.next = t.next
+        t.next.prev = temp
+        t.next = temp
+        temp.prev = t
+
+    }
+
     printLL(){
         let t1 = this.head
         while(t1 !== null){
@@ -56,4 +73,5 @@ list.InsertAtEnd(10)
 list.InsertAtEnd(20)
 list.InsertAtEnd(30)
 list.InsertAtBeg(5)
+list.InsertAtMid(30,20)
 list.printLL()
