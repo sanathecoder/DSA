@@ -56,6 +56,34 @@ class DoublyLL{
         temp.prev = t
 
     }
+    
+    deleteLL(value){
+        if(this.head == null){
+            console.log('List is empty')
+            return
+        }
+        let t = this.head
+        if(t.data  == value){
+            this.head = t.next
+            this.head.prev = null
+            return
+        }
+        while(t.next !== null){
+            if(t.data == value){
+                t.prev.next = t.next
+                t.next.prev = t.prev
+                return
+            }else{
+                t = t.next
+            }
+        }
+
+        if(t.data == value){
+            t.prev.next = null
+        }
+
+
+    }
 
     printLL(){
         let t1 = this.head
@@ -71,7 +99,9 @@ let list = new DoublyLL()
 
 list.InsertAtEnd(10)
 list.InsertAtEnd(20)
-list.InsertAtEnd(30)
+list.InsertAtEnd(50)
 list.InsertAtBeg(5)
-list.InsertAtMid(30,20)
+list.InsertAtMid(40,20)
+list.deleteLL(5)
+list.deleteLL(50)
 list.printLL()
