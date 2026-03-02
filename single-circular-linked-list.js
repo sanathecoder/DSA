@@ -24,6 +24,26 @@ class circularSingleLinkedlist{
             temp.next = this.head
         }
     }
+    InsertAtBeg(value){
+        let temp = new Node(value)
+        // for empty list 
+        if(this.head == null){
+            this.head = temp
+            temp.next = this.head
+            return
+        }
+
+        // for non-empty list 
+        let t1 = this.head
+        if(this.head !== null){
+            while(t1.next!== this.head){
+                t1 = t1.next
+            }
+            temp.next = this.head
+            t1.next = temp
+                this.head = temp
+        }
+    }
 
     InsertAtMid(value,x){
         let temp = new Node(value)
@@ -52,5 +72,8 @@ let Circularlist = new circularSingleLinkedlist()
 Circularlist.InsertAtEnd(20)
 Circularlist.InsertAtEnd(40)
 Circularlist.InsertAtEnd(60)
+Circularlist.InsertAtBeg(10)
+Circularlist.InsertAtBeg(30)
+Circularlist.InsertAtBeg(70)
 Circularlist.InsertAtMid(50,40)
 Circularlist.printLL()
