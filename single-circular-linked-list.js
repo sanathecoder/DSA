@@ -58,6 +58,44 @@ class circularSingleLinkedlist{
         }
     }
 
+     deleteCircularLL(value){
+        let t1 = this.head
+        let prev = t1
+        // Head delete case
+if(this.head.data == value){
+
+    // Single node case
+    if(t1.next === this.head){
+        this.head = null
+        return
+    }
+
+    // Find last node
+    let last = this.head
+    while(last.next !== this.head){
+        last = last.next
+    }
+
+    this.head = t1.next
+    last.next = this.head
+    return
+}
+
+        while(t1.next !== this.head){
+            if(t1.data == value){
+                prev.next = t1.next
+                return
+            }else{
+                prev = t1
+                t1 = t1.next
+            }
+        }
+
+        if(t1.data == value){
+            prev.next = this.head
+        }
+    }
+
     printLL(){
         let t1 = this.head
     while(t1.next !== this.head){
@@ -76,4 +114,5 @@ Circularlist.InsertAtBeg(10)
 Circularlist.InsertAtBeg(30)
 Circularlist.InsertAtBeg(70)
 Circularlist.InsertAtMid(50,40)
+Circularlist.deleteCircularLL(30)
 Circularlist.printLL()
