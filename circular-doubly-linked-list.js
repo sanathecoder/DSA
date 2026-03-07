@@ -31,7 +31,15 @@ class CircularDoublyLL{
        
 
     }
-    
+
+    PrintCLL(){
+        let t1 = this.head
+        while(t1.next !== this.head){
+            console.log(t1.data)
+            t1 = t1.next
+        }
+        console.log(t1.data)
+    }    
 
 }
 
@@ -40,3 +48,4 @@ let CircularDLL = new CircularDoublyLL()
 CircularDLL.InsertAtEnd(10)
 CircularDLL.InsertAtEnd(20)
 CircularDLL.InsertAtEnd(30)
+CircularDLL.PrintCLL()
