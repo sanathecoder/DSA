@@ -32,6 +32,21 @@ class CircularDoublyLL{
 
     }
 
+    InsertAtBeg(value){
+        let temp = new Node(value)
+        if(this.head == null){
+            this.head = temp
+            temp.next = temp
+            temp.prev = temp
+            return
+        }
+        let last = this.head.prev
+        temp.next = this.head
+        temp.prev = last
+        last.next = temp
+        this.head = temp
+    }
+
     PrintCLL(){
         let t1 = this.head
         while(t1.next !== this.head){
@@ -48,4 +63,6 @@ let CircularDLL = new CircularDoublyLL()
 CircularDLL.InsertAtEnd(10)
 CircularDLL.InsertAtEnd(20)
 CircularDLL.InsertAtEnd(30)
+CircularDLL.InsertAtBeg(5)
+CircularDLL.InsertAtBeg(6)
 CircularDLL.PrintCLL()
