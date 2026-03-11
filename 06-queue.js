@@ -6,5 +6,9 @@ class Queue{
     IsEmpty(){
         return this.items.length === 0
     }
+
+    insert(value){
+        this.items.insert(value)
+    }
     
 }
