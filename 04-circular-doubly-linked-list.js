@@ -64,6 +64,10 @@ class CircularDoublyLL{
 
     }
 
+    deleteCLL(){
+        
+    }
+
     PrintCLL(){
         let t1 = this.head
         while(t1.next !== this.head){
