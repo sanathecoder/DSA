@@ -64,7 +64,7 @@ class CircularDoublyLL{
 
     }
 
-    deleteCLL(){
+    deleteCLL(value){
         
     }
 
