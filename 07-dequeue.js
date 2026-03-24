@@ -15,18 +15,18 @@ class dequeue{
         if(this.IsEmpty()){
             console.log('DeQueue is Empty')
         }else{
-            return this.items.shift()
+            return this.items.shift()   // shift remove element from the start
         }
     }
     InsertAtFront(value){
-        this.items.unshift(value)
+        this.items.unshift(value)    // add element to the front
     }
 
     deleteAtend(){
         if(this.IsEmpty()){
             console.log('DeQueue is Empty')
         }else{
-       return this.items.pop()
+       return this.items.pop()   // remove element from the end
     }
     }
 }
