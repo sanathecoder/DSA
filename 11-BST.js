@@ -13,7 +13,7 @@ class Node{
         }else if(root.data > value){
             this.insert(root.left, value)
         }else{
-            this.insert(root.right, value)
+           root.right = this.insert(root.right, value)
         }
     }
 }
