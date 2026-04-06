@@ -11,9 +11,26 @@ class Node{
         }else if(root.data == value){
             return root
         }else if(root.data > value){
-            this.insert(root.left, value)
+           root.left = this.insert(root.left, value)
         }else{
            root.right = this.insert(root.right, value)
         }
+        return root
+    }
+
+
+    InOrder(root){
+        if(root!= null){
+            this.InOrder(root.left)
+            console.log(root.data , "  ")
+            this.InOrder(root.right)
+        }
     }
 }
+
+let root = new Node(20)
+root.left = new Node(15)
+root.right = new Node(30)
+root.left.left = new Node(12)
+root.left.right = new Node(18)
+root.InOrder(root)
