@@ -18,6 +18,18 @@ class Node{
         return root
     }
 
+    search(root, value){
+        if(root == null){
+           console.log("element not found")
+        }else if(root.data == value){
+            console.log("element found")
+        }else if(root.data > value){
+           this.search(root.left, value)
+        }else{
+           this.search(root.right, value)
+        }
+        return root
+    }
 
     InOrder(root){
         if(root!= null){
@@ -28,9 +40,17 @@ class Node{
     }
 }
 
-let root = new Node(20)
-root.left = new Node(15)
-root.right = new Node(30)
-root.left.left = new Node(12)
-root.left.right = new Node(18)
+let tree = new Node()
+
+let root = tree.insert(null,20)
+root =  tree.insert(root, 15)
+root =  tree.insert(root, 30)
+root =  tree.insert(root, 40)
+root =  tree.insert(root, 12)
+root =  tree.insert(root, 18)
+root =  tree.insert(root, 25)
+root =  tree.insert(root, 50)
+
 root.InOrder(root)
+root.search(root,18)
+root.search(root,80)
