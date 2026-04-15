@@ -31,6 +31,31 @@ class Node{
         return root
     }
 
+
+    // deletion 
+
+    delete(root,value){
+        if(root == null){
+            return root
+        }
+         if(root.data > value){
+           root.left = this.delete(root.left,value)
+        }
+        if(root.data ){
+            root.right = this.delete(root.right,value)
+        }else{
+            if(root.left == null){
+                return root.right
+            }
+            if(root.right == null){
+                return root.left
+            }
+        }
+    }
+
+
+
+
     InOrder(root){
         if(root!= null){
             this.InOrder(root.left)
