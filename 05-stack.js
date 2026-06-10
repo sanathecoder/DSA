@@ -22,6 +22,16 @@ class stack{
     pop(){
          return this.s.pop()
     }
+
+    search(value){
+        for(let i = this.s.length-1; i>=0; i--){
+            if(this.s[i] === value){
+                return this.s.length - i
+            }
+
+        }
+         return -1
+    }
 }
 
 let stk = new stack()
@@ -31,9 +41,11 @@ stk.push(30)
 stk.push(40)
 stk.push(50)
 
-console.log(stk.length())
-console.log(stk.peek())
-console.log(stk.pop())
-console.log(stk.length())
-console.log(stk.peek())
+// console.log(stk.length())
+// console.log(stk.peek())
+// console.log(stk.pop())
+// console.log(stk.length())
+// console.log(stk.peek())
+
+console.log(stk.search(30))
 

@@ -32,12 +32,11 @@ class Node{
     }
 
     get_successor(root){
-        let root = root.right
-        while(root !== null && root.left !== null){
-            root = root.left
+        let curr = root.right
+        while(curr !== null && curr.left !== null){
+            curr = curr.left
         }
-        return root
-
+        return curr
     }
 
     // deletion 
@@ -63,8 +62,9 @@ class Node{
                 root.data = succ.data
                 root.left = this.delete(root.right,succ.data)
             }
-        }
-        return root
+        } 
+        return root   
+
     }
 
 
